@@ -9,9 +9,32 @@
 </head>
 
 <div id="app">
+
+	<navbar></navbar>
+
 	<span v-if="hasMessage" :title="vue">{{message}}</span>
 	<button @click="logMessage">Click me!</button>
 	<button @click="toggleMessage">Toggle message</button>
+
+	<form>
+		<input v-model.trim="message" type="text" />
+		<input v-model="hasMessage" type="checkbox" />
+		<div>
+			<select v-model="selected">
+				<option disabled value="">What's your Favourite coffee?</option>
+				<option>cafe latte</option>
+				<option>cappuccino</option>
+				<option>frappuccino</option>
+			</select>
+			<span>Selected: {{ selected }}</span>
+		</div>
+		<ul>
+			<li v-for="message in messages">
+				{{message.text}}
+			</li>
+		</ul>
+	</form>
+
 </div>
 
 <body>
