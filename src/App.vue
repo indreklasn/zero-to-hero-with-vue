@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-    <Counter></Counter>
+    <Counter>
+    </Counter>
   </div>
 </template>
 
